@@ -1,6 +1,8 @@
-"""基于Logistic回归的神经网络
+"""基于Logistic回归的学习算法
 
 本代码的主要功能为图像识别检测是否是猫
+
+This is a 1 layer Neural Network whitch have 0 hidden layer
 
 建立神经网络的主要步骤是:
 1.定义模型结构（例如输入要素的数量）
@@ -15,13 +17,14 @@ Date:2020-07-28
 
 import numpy as np
 import h5py
-import matplotlib.pyplot as plt 
+import matplotlib.pyplot as plt
 import cv2
 
 # - [numpy](www.numpy.org) is the fundamental package for scientific computing with Python.
 # - [h5py](http://www.h5py.org) is a common package to interact with a dataset that is stored on an H5 file.
 # - [matplotlib](http://matplotlib.org) is a famous library to plot graphs in Python.
 # - [cv2](https://opencv.org/) is a opensource computer vision lib
+
 
 def load_dataset():
     train_dataset = h5py.File("datasets/train_catvnoncat.h5", "r")
