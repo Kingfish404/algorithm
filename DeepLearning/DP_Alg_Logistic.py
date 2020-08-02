@@ -313,12 +313,12 @@ d = model(train_set_x, train_set_y, test_set_x, test_set_y,
 #       classes[int(d["Y_prediction_test"][0, index])].decode("utf-8") + "\" picture.")
 
 # 绘制学习曲线（含成本）
-# costs = np.squeeze(d['costs'])
-# plt.plot(costs)
-# plt.ylabel('cost')
-# plt.xlabel('iterations (per hundreds)')
-# plt.title("Learning rate =" + str(d["learning_rate"]))
-# plt.show()
+costs = np.squeeze(d['costs'])
+plt.plot(costs)
+plt.ylabel('cost')
+plt.xlabel('iterations (per hundreds)')
+plt.title("Learning rate =" + str(d["learning_rate"]))
+plt.show()
 
 # 显示不同学习率对于预测的影响
 # learning_rates = [0.01, 0.001, 0.0001]
