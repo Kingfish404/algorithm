@@ -17,8 +17,8 @@ grid on
 drawnow
 
 %% 计算城市间距离
-n=size(cityCoor,1);            %城市数目
-cityDist=zeros(n,n);           %城市距离矩阵
+n=size(cityCoor,1);            % 城市数目
+cityDist=zeros(n,n);           % 城市距离矩阵
 for i=1:n
     for j=1:n
         if i~=j
@@ -28,8 +28,8 @@ for i=1:n
         cityDist(j,i)=cityDist(i,j);
     end
 end
-nMax=200;                      %进化次数
-indiNumber=1000;               %个体数目
+nMax=200;                      % 进化次数
+indiNumber=1000;               % 个体数目
 individual=zeros(indiNumber,n);
 %^初始化粒子位置
 for i=1:indiNumber
@@ -39,17 +39,17 @@ end
 %% 计算种群适应度
 indiFit=fitness(individual,cityCoor,cityDist);
 [value,index]=min(indiFit);
-tourPbest=individual;                              %当前个体最优
-tourGbest=individual(index,:) ;                    %当前全局最优
-recordPbest=inf*ones(1,indiNumber);                %个体最优记录
-recordGbest=indiFit(index);                        %群体最优记录
+tourPbest=individual;                              % 当前个体最优
+tourGbest=individual(index,:) ;                    % 当前全局最优
+recordPbest=inf*ones(1,indiNumber);                % 个体最优记录
+recordGbest=indiFit(index);                        % 群体最优记录
 xnew1=individual;
 
 %% 循环寻找最优路径
 L_best=zeros(1,nMax);
 times = 0;
 for N=1:nMax
-    N
+    disp(["N=",N])
     
     %计算适应度值
     indiFit=fitness(individual,cityCoor,cityDist);
@@ -178,10 +178,8 @@ for N=1:nMax
     
 end
 
-
-
 %% 结果作图
-figure
+close all
 plot(L_best)
 title('算法训练过程')
 xlabel('迭代次数')

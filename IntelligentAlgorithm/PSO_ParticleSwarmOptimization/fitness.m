@@ -1,9 +1,9 @@
 function indiFit=fitness(x,cityCoor,cityDist)
 %% 该函数用于计算个体适应度值
-%x           input     个体
-%cityCoor    input     城市坐标
-%cityDist    input     城市距离
-%indiFit     output    个体适应度值 
+% x           input     个体
+% cityCoor    input     城市坐标
+% cityDist    input     城市距离
+% indiFit     output    个体适应度值 
 
 m=size(x,1);
 n=size(cityCoor,1);

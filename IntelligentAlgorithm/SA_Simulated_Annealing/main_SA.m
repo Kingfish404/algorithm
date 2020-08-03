@@ -1,6 +1,5 @@
 %% SA模拟退火算法的主函数
-clc
-clear;
+clc;clear;
 %% 初始值设置
 load('data\china.mat');
 plotcities(province, border, city); % 画出地图

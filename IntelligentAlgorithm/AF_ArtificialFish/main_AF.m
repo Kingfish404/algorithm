@@ -2,7 +2,7 @@ clc
 clear all
 close all
 %% AF 人工鱼群算法主函数
-tic
+tic;clear;clc;
 figure(1);
 hold on
 fplot(@(x) x.*sin(10*pi*x)+2,[-1 2]);
@@ -55,7 +55,11 @@ while gen<=MAXGEN
         [BestX(:,gen)]=BestX(:,gen-1);
     end
     gen=gen+1;
+%     plot(bestx(1),besty,'ro','MarkerSize',100)
+%     pause(0.1)
 end
+figure(1)
+fplot(@(x) x.*sin(10*pi*x)+2,[-1 2]);
 plot(bestx(1),besty,'ro','MarkerSize',100)
 xlabel('x')
 ylabel('y')
